@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J2 Industries — Cinematic AI Films</title>
+<meta name="description" content="J2 Industries is an AI film studio creating cinematic trailers, fan films and short scenes with Seedance 2.0, ElevenLabs and Kinovi.ai. 2.9M+ views. Every channel, one hub.">
+<meta property="og:title" content="J2 Industries — Cinematic AI Films">
+<meta property="og:description" content="AI film studio. Cinematic trailers, fan films & short scenes. 2.9M+ views across YouTube, TikTok, Instagram and X.">
+<meta property="og:image" content="assets/banner.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="assets/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top" aria-label="J2 Industries — home">
+    <span class="ring-mark" aria-hidden="true">J2</span>
+    <span class="brand-word">INDUSTRIES<em>AI FILM STUDIO</em></span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#featured">Now Showing</a>
+    <a href="#films">Filmography</a>
+    <a href="#studio">The Studio</a>
+    <a href="#connect">Connect</a>
+  </nav>
+  <a class="btn btn-gold btn-nav sheen" href="https://www.youtube.com/@j2-industries?sub_confirmation=1" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg>
+    Subscribe
+  </a>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="assets/banner.jpg" alt="" class="hero-banner" id="heroBanner">
+    <canvas id="embers"></canvas>
+    <div class="hero-vignette"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="hero-inner" id="heroInner">
+    <p class="kicker reveal">J2 INDUSTRIES <span class="k-dot">✦</span> AI FILM STUDIO <span class="k-dot">✦</span> EST. 2012</p>
+    <h1 class="hero-title">
+      <span class="line reveal d1">CINEMATIC</span>
+      <span class="line reveal d2">WORLDS<span class="comma">,</span></span>
+      <span class="line serif reveal d3">directed <em>with AI.</em></span>
+    </h1>
+    <p class="hero-sub reveal d4">Movie trailers, fan films &amp; short scenes built frame-by-frame with
+      <strong>Seedance&nbsp;2.0</strong>, <strong>ElevenLabs</strong> and <strong>Kinovi.ai</strong> —
+      from Dragon Ball Z to Kingdom Come.</p>
+    <div class="hero-cta reveal d5">
+      <a class="btn btn-gold sheen" href="#featured">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        Watch the films
+      </a>
+      <a class="btn btn-ghost" href="#connect">All channels <span class="arrow">→</span></a>
+    </div>
+    <dl class="hero-stats reveal d6">
+      <div><dt class="stat" data-count="2918660" data-fmt="m">0</dt><dd>Total views</dd></div>
+      <div><dt class="stat" data-count="69300" data-fmt="k">0</dt><dd>Subscribers</dd></div>
+      <div><dt class="stat" data-count="19" data-fmt="plus">0</dt><dd>Films &amp; shorts</dd></div>
+      <div><dt class="stat stat-static">1.6M</dt><dd>Biggest premiere</dd></div>
+    </dl>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mq-fill">SEEDANCE 2.0</span><i>✦</i><span class="mq-out">ELEVENLABS</span><i>✦</i><span class="mq-fill">KINOVI.AI</span><i>✦</i><span class="mq-out">CINEMATIC TRAILERS</span><i>✦</i><span class="mq-fill">FAN FILMS</span><i>✦</i><span class="mq-out">AI PRODUCTION</span><i>✦</i>
+    <span class="mq-fill">SEEDANCE 2.0</span><i>✦</i><span class="mq-out">ELEVENLABS</span><i>✦</i><span class="mq-fill">KINOVI.AI</span><i>✦</i><span class="mq-out">CINEMATIC TRAILERS</span><i>✦</i><span class="mq-fill">FAN FILMS</span><i>✦</i><span class="mq-out">AI PRODUCTION</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ============ FEATURED ============ -->
+<section class="section" id="featured">
+  <div class="sec-head reveal">
+    <p class="sec-index">01 / NOW SHOWING</p>
+    <h2>The <em class="serif">Premieres</em></h2>
+  </div>
+
+  <article class="feature card spotlight gradient-border reveal" data-video="ldHb3eoF6A8" data-title="The Death of ICON">
+    <div class="feature-media">
+      <img src="assets/ldHb3eoF6A8.jpg" alt="The Death of ICON — DC Comics AI short fan film poster" loading="eager">
+      <button class="play-btn" aria-label="Play The Death of ICON">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <span class="badge badge-views">1.6M VIEWS</span>
+    </div>
+    <div class="feature-meta">
+      <p class="mono-meta">FEATURE ✦ DC FAN FILM ✦ MAY 2026</p>
+      <h3>The Death of ICON</h3>
+      <p>A DC Comics action short fan film — J2's breakout premiere and the studio's most-watched release to date.</p>
+    </div>
+  </article>
+
+  <article class="feature feature-alt card spotlight gradient-border reveal" data-video="cok5yqXMuOI" data-title="Dragon Ball Z: Frieza Saga — Multiverse">
+    <div class="feature-media">
+      <img src="assets/cok5yqXMuOI.jpg" alt="Dragon Ball Z Frieza Saga Multiverse — epic action short film poster" loading="lazy">
+      <button class="play-btn" aria-label="Play Dragon Ball Z: Frieza Saga — Multiverse">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <span class="badge badge-views">908K VIEWS</span>
+    </div>
+    <div class="feature-meta">
+      <p class="mono-meta">EPIC SHORT FILM ✦ MULTIVERSE SAGA ✦ JUL 2026</p>
+      <h3>Dragon Ball Z: Frieza Saga</h3>
+      <p>The Multiverse saga goes live-action — an epic AI-produced short that pulled nearly a million views in its first week.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ FILMOGRAPHY ============ -->
+<section class="section" id="films">
+  <div class="sec-head reveal">
+    <p class="sec-index">02 / FILMOGRAPHY</p>
+    <h2>Every <em class="serif">release</em></h2>
+    <a class="sec-link" href="https://www.youtube.com/@j2-industries/videos" target="_blank" rel="noopener">Full channel on YouTube ↗</a>
+  </div>
+  <div class="film-grid" id="filmGrid"><!-- cards injected by app.js --></div>
+</section>
+
+<!-- ============ STUDIO ============ -->
+<section class="section" id="studio">
+  <div class="sec-head reveal">
+    <p class="sec-index">03 / THE STUDIO</p>
+    <h2>How the films <em class="serif">get made</em></h2>
+  </div>
+
+  <div class="studio-grid">
+    <article class="tool card spotlight gradient-border reveal">
+      <p class="tool-no">TOOL — 01</p>
+      <h3>Seedance 2.0</h3>
+      <p>The motion engine. Photoreal, cinematic AI video generation drives every fight scene, camera move and world.</p>
+      <p class="tool-tag">VIDEO GENERATION</p>
+    </article>
+    <article class="tool card spotlight gradient-border reveal d1">
+      <p class="tool-no">TOOL — 02</p>
+      <h3>ElevenLabs</h3>
+      <p>The voice of the studio. AI voice acting and sound design give every character and trailer its weight.</p>
+      <p class="tool-tag">VOICE + SOUND</p>
+    </article>
+    <article class="tool tool-hero card spotlight gradient-border reveal d2">
+      <p class="tool-no">PARTNER STUDIO</p>
+      <h3>Kinovi.ai</h3>
+      <p>Be your own director. The AI video studio J2 Industries partners with — build cinematic scenes the same way the films on this page were made.</p>
+      <a class="btn btn-gold sheen" href="https://kinovi.ai/?utm_source=partner_1A0101CF&utm_medium=referral" target="_blank" rel="noopener">Start directing ↗</a>
+      <p class="tool-tag">J2 PARTNER LINK</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section class="section" id="connect">
+  <div class="sec-head reveal">
+    <p class="sec-index">04 / CONNECT</p>
+    <h2>Every channel. <em class="serif">One hub.</em></h2>
+  </div>
+
+  <div class="connect-grid">
+    <a class="social card spotlight gradient-border reveal" href="https://www.youtube.com/@j2-industries?sub_confirmation=1" target="_blank" rel="noopener">
+      <span class="social-icon yt" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg></span>
+      <span class="social-body"><strong>YouTube</strong><span>@j2-industries — 69.3K subscribers. The main stage: every trailer &amp; film premieres here.</span></span>
+      <span class="social-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="social card spotlight gradient-border reveal d1" href="https://www.tiktok.com/@j2i_movies" target="_blank" rel="noopener">
+      <span class="social-icon tk" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.6 5.8a5.9 5.9 0 0 1-3.4-3.3c-.2-.5-.3-1-.3-1.5h-3.6v14.5a3 3 0 1 1-2.1-2.9V8.9a6.7 6.7 0 1 0 5.7 6.6V8.6a9.3 9.3 0 0 0 4.7 1.3V6.2c-.3 0-.7-.1-1-.4z"/></svg></span>
+      <span class="social-body"><strong>TikTok</strong><span>@j2i_movies — short-form cuts, scene drops and vertical edits of the films.</span></span>
+      <span class="social-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="social card spotlight gradient-border reveal d2" href="https://www.instagram.com/j2_industries" target="_blank" rel="noopener">
+      <span class="social-icon ig" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.8" cy="6.2" r="1.3" fill="currentColor" stroke="none"/></svg></span>
+      <span class="social-body"><strong>Instagram</strong><span>@j2_industries — posters, stills and behind-the-scenes from the studio.</span></span>
+      <span class="social-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="social card spotlight gradient-border reveal d3" href="https://x.com/j2_industries" target="_blank" rel="noopener">
+      <span class="social-icon x" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.2l7.3-8.3L2.8 2h6.4l4.4 5.9L18.9 2zm-1.1 18.1h1.7L7.1 3.8H5.2l12.6 16.3z"/></svg></span>
+      <span class="social-body"><strong>X / Twitter</strong><span>@j2_industries — release announcements, tests and studio updates.</span></span>
+      <span class="social-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="social social-wide card spotlight gradient-border reveal d4" href="https://linktr.ee/j2_industries" target="_blank" rel="noopener">
+      <span class="social-icon lt" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13.5 2h-3v6.3L6 3.8 3.8 6l4.5 4.5H2v3h6.3L3.8 18 6 20.2l6-6 6 6 2.2-2.2-4.5-4.5H22v-3h-6.3L20.2 6 18 3.8l-4.5 4.5V2z"/></svg></span>
+      <span class="social-body"><strong>Linktree — everything in one place</strong><span>linktr.ee/j2_industries — the studio's full link index, always current.</span></span>
+      <span class="social-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <p class="footer-mark" aria-hidden="true">J2 INDUSTRIES</p>
+  <div class="footer-row">
+    <a class="nav-brand" href="#top"><span class="ring-mark" aria-hidden="true">J2</span><span class="brand-word">INDUSTRIES<em>AI FILM STUDIO</em></span></a>
+    <p class="footer-note">Cinematic trailers &amp; short films, directed with AI.<br>© 2026 J2 Industries. All films by J2 Industries.</p>
+    <a class="btn btn-ghost" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- ============ PLAYER MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel">
+    <button class="modal-close" data-close aria-label="Close player">✕</button>
+    <div class="modal-frame" id="modalFrame"></div>
+    <div class="modal-foot">
+      <p id="modalTitle" class="mono-meta"></p>
+      <a id="modalYt" class="sec-link" href="#" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
