@@ -67,30 +67,6 @@
   menuBtn.addEventListener("click", () => setMenu(menu.hidden));
   menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
 
-  /* ---------- custom cursor (morphs to PLAY / OPEN) ---------- */
-  const cursor = document.getElementById("cursor");
-  const cursorLabel = document.getElementById("cursorLabel");
-  if (!reduceMotion && matchMedia("(pointer: fine)").matches) {
-    let cx = -100, cy = -100, tx = cx, ty = cy;
-    document.addEventListener("pointermove", (e) => {
-      tx = e.clientX; ty = e.clientY;
-      cursor.classList.add("visible");
-      const hot = e.target.closest("[data-video], .social, .play-btn");
-      if (hot) {
-        cursor.classList.add("on");
-        cursorLabel.textContent = hot.matches(".social") ? "OPEN ↗" : "PLAY ▶";
-      } else {
-        cursor.classList.remove("on");
-      }
-    }, { passive: true });
-    document.addEventListener("pointerleave", () => cursor.classList.remove("visible"));
-    (function follow() {
-      cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22;
-      cursor.style.left = cx + "px"; cursor.style.top = cy + "px";
-      requestAnimationFrame(follow);
-    })();
-  }
-
   /* ---------- modal player ---------- */
   const modal = document.getElementById("modal");
   const frame = document.getElementById("modalFrame");

@@ -339,27 +339,6 @@ a{color:inherit;text-decoration:none}
 .loader-sub{font-family:var(--font-m);font-size:.58rem;letter-spacing:.3em;color:var(--muted)}
 .loader.skip{display:none}
 
-/* ---------- custom cursor ---------- */
-.cursor{
-  position:fixed;top:0;left:0;z-index:500;pointer-events:none;
-  width:10px;height:10px;border-radius:99px;
-  background:var(--gold-hi);
-  transform:translate(-50%,-50%);
-  transition:width .25s,height .25s,background .25s,opacity .3s;
-  display:none;opacity:0;
-}
-.cursor span{
-  display:none;font-family:var(--font-m);font-size:.6rem;letter-spacing:.14em;
-  color:#141008;font-weight:700;white-space:nowrap;
-}
-.cursor.on{
-  width:auto;height:auto;min-width:58px;min-height:58px;
-  display:grid;place-items:center;padding:.4rem .9rem;
-  background:var(--grad-gold);box-shadow:0 0 34px rgba(212,169,85,.45);
-}
-.cursor.on span{display:block}
-@media(pointer:fine){.cursor{display:block}.cursor.visible{opacity:1}}
-
 /* ---------- hero reel (Ken Burns crossfade) ---------- */
 .hero-reel{position:absolute;inset:0}
 .reel-frame{
@@ -452,6 +431,5 @@ a{color:inherit;text-decoration:none}
   .reveal{opacity:1;transform:none}
   #embers,.grain{display:none}
   .loader{display:none}
-  .cursor{display:none!important}
   .reel-frame.is-active{opacity:.38}
 }
