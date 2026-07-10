@@ -17,6 +17,18 @@
 </head>
 <body>
 
+<!-- ============ PRELOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <span class="ring-mark loader-ring">J2</span>
+    <p class="loader-word">INDUSTRIES</p>
+    <p class="loader-sub">AI FILM STUDIO — EST. 2012</p>
+  </div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel"></span></div>
+
 <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
 <!-- ============ NAV ============ -->
@@ -35,14 +47,38 @@
     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg>
     Subscribe
   </a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
 </header>
+
+<!-- ============ FULLSCREEN MENU ============ -->
+<div class="menu" id="menu" hidden>
+  <nav class="menu-links" aria-label="Menu">
+    <a href="#featured"><i>01</i>Now Showing</a>
+    <a href="#films"><i>02</i>Filmography</a>
+    <a href="#studio"><i>03</i>The Studio</a>
+    <a href="#connect"><i>04</i>Connect</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="https://www.youtube.com/@j2-industries" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.tiktok.com/@j2i_movies" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.instagram.com/j2_industries" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/j2_industries" target="_blank" rel="noopener">X</a>
+    <a href="https://linktr.ee/j2_industries" target="_blank" rel="noopener">Linktree</a>
+  </div>
+</div>
 
 <main id="top">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">
-    <img src="assets/banner.jpg" alt="" class="hero-banner" id="heroBanner">
+    <div class="hero-reel" id="heroReel">
+      <img src="assets/banner.jpg" alt="" class="reel-frame is-active">
+      <img src="assets/ldHb3eoF6A8.jpg" alt="" class="reel-frame">
+      <img src="assets/cok5yqXMuOI.jpg" alt="" class="reel-frame">
+      <img src="assets/ZPoeFDE_guc.jpg" alt="" class="reel-frame">
+      <img src="assets/f2aJcDzCZXc.jpg" alt="" class="reel-frame">
+    </div>
     <canvas id="embers"></canvas>
     <div class="hero-vignette"></div>
     <div class="grain"></div>
@@ -59,10 +95,10 @@
       <strong>Seedance&nbsp;2.0</strong>, <strong>ElevenLabs</strong> and <strong>Kinovi.ai</strong> —
       from Dragon Ball Z to Kingdom Come.</p>
     <div class="hero-cta reveal d5">
-      <a class="btn btn-gold sheen" href="#featured">
+      <button class="btn btn-gold sheen" data-video="KE_8elWvzsk" data-title="DBZ Multiverse: Frieza Saga — Official Trailer">
         <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        Watch the films
-      </a>
+        Play the latest trailer
+      </button>
       <a class="btn btn-ghost" href="#connect">All channels <span class="arrow">→</span></a>
     </div>
     <dl class="hero-stats reveal d6">
@@ -83,6 +119,17 @@
     <span class="mq-fill">SEEDANCE 2.0</span><i>✦</i><span class="mq-out">ELEVENLABS</span><i>✦</i><span class="mq-fill">KINOVI.AI</span><i>✦</i><span class="mq-out">CINEMATIC TRAILERS</span><i>✦</i><span class="mq-fill">FAN FILMS</span><i>✦</i><span class="mq-out">AI PRODUCTION</span><i>✦</i>
   </div>
 </div>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="section manifesto" aria-label="Studio statement">
+  <p class="mono-meta reveal">THE PREMISE</p>
+  <h2 class="manifesto-text">
+    <span class="reveal">One director.</span>
+    <span class="reveal d1">A studio of <em class="serif">machines.</em></span>
+    <span class="reveal d2 manifesto-quiet">Worlds that once took a hundred-person crew —</span>
+    <span class="reveal d3">now directed <em class="serif">frame by frame.</em></span>
+  </h2>
+</section>
 
 <!-- ============ FEATURED ============ -->
 <section class="section" id="featured">
@@ -195,6 +242,22 @@
       <span class="social-body"><strong>Linktree — everything in one place</strong><span>linktr.ee/j2_industries — the studio's full link index, always current.</span></span>
       <span class="social-arrow" aria-hidden="true">↗</span>
     </a>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="cta-inner reveal">
+    <p class="mono-meta">NEXT PREMIERE — IN PRODUCTION</p>
+    <h2>Don't miss <em class="serif">the next drop.</em></h2>
+    <p class="cta-sub">Join 69K+ subscribers watching every premiere — or step behind the camera and direct your own with Kinovi.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold sheen" href="https://www.youtube.com/@j2-industries?sub_confirmation=1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg>
+        Subscribe on YouTube
+      </a>
+      <a class="btn btn-ghost" href="https://kinovi.ai/?utm_source=partner_1A0101CF&utm_medium=referral" target="_blank" rel="noopener">Direct your own <span class="arrow">→</span></a>
+    </div>
   </div>
 </section>
 

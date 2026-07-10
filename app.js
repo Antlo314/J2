@@ -25,10 +25,71 @@
         </button>
       </div>
       <div class="film-body">
-        <p class="mono-meta"><b>${f.tag}</b> ✦ ${f.views} views ✦ ${f.date}</p>
+        <p class="mono-meta"><span class="film-no">${String(i + 1).padStart(2, "0")}</span><b>${f.tag}</b> ✦ ${f.views} views ✦ ${f.date}</p>
         <h3>${f.title}</h3>
       </div>
     </article>`).join("");
+
+  /* ---------- preloader ---------- */
+  const loader = document.getElementById("loader");
+  if (reduceMotion || sessionStorage.getItem("j2seen")) {
+    loader.classList.add("skip");
+  } else {
+    sessionStorage.setItem("j2seen", "1");
+    document.body.style.overflow = "hidden";
+    setTimeout(() => {
+      loader.classList.add("done");
+      document.body.style.overflow = "";
+    }, 1500);
+  }
+
+  /* ---------- hero reel rotation (Ken Burns crossfade) ---------- */
+  const frames = [...document.querySelectorAll(".reel-frame")];
+  if (frames.length > 1 && !reduceMotion) {
+    let cur = 0;
+    setInterval(() => {
+      frames[cur].classList.remove("is-active");
+      cur = (cur + 1) % frames.length;
+      frames[cur].classList.add("is-active");
+    }, 6500);
+  }
+
+  /* ---------- fullscreen menu ---------- */
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
+  function setMenu(open) {
+    menu.hidden = !open;
+    menuBtn.classList.toggle("open", open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  menuBtn.addEventListener("click", () => setMenu(menu.hidden));
+  menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+
+  /* ---------- custom cursor (morphs to PLAY / OPEN) ---------- */
+  const cursor = document.getElementById("cursor");
+  const cursorLabel = document.getElementById("cursorLabel");
+  if (!reduceMotion && matchMedia("(pointer: fine)").matches) {
+    let cx = -100, cy = -100, tx = cx, ty = cy;
+    document.addEventListener("pointermove", (e) => {
+      tx = e.clientX; ty = e.clientY;
+      cursor.classList.add("visible");
+      const hot = e.target.closest("[data-video], .social, .play-btn");
+      if (hot) {
+        cursor.classList.add("on");
+        cursorLabel.textContent = hot.matches(".social") ? "OPEN ↗" : "PLAY ▶";
+      } else {
+        cursor.classList.remove("on");
+      }
+    }, { passive: true });
+    document.addEventListener("pointerleave", () => cursor.classList.remove("visible"));
+    (function follow() {
+      cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22;
+      cursor.style.left = cx + "px"; cursor.style.top = cy + "px";
+      requestAnimationFrame(follow);
+    })();
+  }
 
   /* ---------- modal player ---------- */
   const modal = document.getElementById("modal");
@@ -59,7 +120,7 @@
   /* ---------- nav glass + progress ---------- */
   const nav = document.getElementById("nav");
   const bar = document.getElementById("progressBar");
-  const banner = document.getElementById("heroBanner");
+  const banner = document.getElementById("heroReel");
   let ticking = false;
   addEventListener("scroll", () => {
     if (ticking) return;
